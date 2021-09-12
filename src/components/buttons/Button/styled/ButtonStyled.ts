@@ -6,7 +6,7 @@ export const ButtonStyled = styled.button`
   background: ${({ theme }) => theme.colors.blue};
   color: ${({ theme }) => theme.colors.lighter};
 
-  border: unset;
+  border: none;
   border-radius: 6px;
   box-shadow: 0px 2px 4px rgba(44, 39, 56, 0.08),
     0px 4px 8px rgba(44, 39, 56, 0.08);
@@ -20,5 +20,14 @@ export const ButtonStyled = styled.button`
     border: 2px solid ${({ theme }) => theme.colors.darkOpacity};
     box-shadow: 0px 2px 4px rgba(44, 39, 56, 0.0001),
       0px 4px 8px rgba(44, 39, 56, 0.08);
+  }
+
+  :disabled {
+    background: ${({ theme }) => theme.colors.light};
+    color: ${({ theme }) => theme.colors.dark};
+    box-shadow: 0px 4px 8px rgba(44, 39, 56, 0.08);
+    mix-blend-mode: normal;
+    opacity: 0.5;
+    pointer-events: none;
   }
 `;

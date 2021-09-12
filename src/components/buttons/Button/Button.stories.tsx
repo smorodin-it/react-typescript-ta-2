@@ -14,6 +14,11 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
 export const Button_ = Template.bind({});
 Button_.args = {
-  // children: "Button",
   children: <Medium16Font>Button</Medium16Font>,
+};
+
+export const ButtonDisabled = Template.bind({});
+ButtonDisabled.args = {
+  children: <Medium16Font>Button</Medium16Font>,
+  disabled: true,
 };

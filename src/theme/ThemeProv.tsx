@@ -8,7 +8,7 @@ export const colors = {
   blue: "rgba(8, 128, 174, 1)",
   light: "rgba(219, 226, 234, 1)",
   dark: "rgba(44, 39, 56, 1)",
-  darkOpacity: "rgba(44, 39, 56, 0,86)",
+  darkOpacity: "rgba(44, 39, 56, 0.86)",
   glacier: "rgb(124,156,191)",
   lighter: "rgba(235, 244, 248, 1)",
   red: "rgba(255, 113, 113, 1)",
