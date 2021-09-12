@@ -12,17 +12,21 @@ export default {
 const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
 
 export const BaseInput = Template.bind({});
-BaseInput.args = {};
+BaseInput.args = {
+  placeholder: "Placeholder",
+};
 
 export const WideInput = Template.bind({});
 WideInput.args = {
   wide: true,
+  placeholder: "Placeholder",
 };
 
 export const InputWithLabel = Template.bind({});
 InputWithLabel.args = {
   label: "Label",
   name: "test-input",
+  placeholder: "Placeholder",
 };
 
 export const InputWithError = Template.bind({});
@@ -30,4 +34,5 @@ InputWithError.args = {
   label: "Label",
   name: "test-input",
   error: "validation error",
+  placeholder: "Placeholder",
 };
