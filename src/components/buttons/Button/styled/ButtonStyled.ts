@@ -20,6 +20,8 @@ export const ButtonStyled = styled.button<ButtonProps>`
   }
 
   :active {
+    margin: -2px;
+
     border: 2px solid ${({ theme }) => theme.colors.darkOpacity};
     box-shadow: 0px 2px 4px rgba(44, 39, 56, 0.0001),
       0px 4px 8px rgba(44, 39, 56, 0.08);
