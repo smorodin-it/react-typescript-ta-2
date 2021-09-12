@@ -1,6 +1,9 @@
 import styled from "styled-components/macro";
+import { checkWide, w100 } from "../../../../theme";
+import { ButtonProps } from "../types";
 
-export const ButtonStyled = styled.button`
+export const ButtonStyled = styled.button<ButtonProps>`
+  ${checkWide};
   padding: 18px 65px 17px 65px;
 
   background: ${({ theme }) => theme.colors.blue};

@@ -17,6 +17,12 @@ Button_.args = {
   children: <Medium16Font>Button</Medium16Font>,
 };
 
+export const ButtonWide = Template.bind({});
+ButtonWide.args = {
+  children: <Medium16Font>Button</Medium16Font>,
+  wide: true,
+};
+
 export const ButtonDisabled = Template.bind({});
 ButtonDisabled.args = {
   children: <Medium16Font>Button</Medium16Font>,
