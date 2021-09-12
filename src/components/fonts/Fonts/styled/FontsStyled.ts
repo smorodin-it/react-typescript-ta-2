@@ -37,6 +37,10 @@ export const Medium16Font = styled.span`
   ${MediumFont};
   font-size: ${rem("16px")};
 `;
+export const Medium14Font = styled.span`
+  ${MediumFont};
+  font-size: ${rem("14px")};
+`;
 
 // Bold
 export const Bold34Font = styled.span`

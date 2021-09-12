@@ -23,7 +23,7 @@ export const InputStyled = styled.input<InputProps>`
 
   :active,
   :focus {
-    margin: -1px;
+    margin: -1px -1px 7px;
 
     border: 2px solid ${({ theme }) => theme.colors.blue};
     outline: unset;
