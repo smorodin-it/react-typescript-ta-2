@@ -1,4 +1,4 @@
-import React, { ButtonHTMLAttributes, FC } from "react";
+import React, { FC } from "react";
 import { ButtonStyled } from "./styled/ButtonStyled";
 import { ButtonProps } from "./types";
 

@@ -18,3 +18,16 @@ export const WideInput = Template.bind({});
 WideInput.args = {
   wide: true,
 };
+
+export const InputWithLabel = Template.bind({});
+InputWithLabel.args = {
+  label: "Label",
+  name: "test-input",
+};
+
+export const InputWithError = Template.bind({});
+InputWithError.args = {
+  label: "Label",
+  name: "test-input",
+  error: "validation error",
+};
