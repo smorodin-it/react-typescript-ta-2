@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import LabelStyled from "./styled/LabelStyled";
+import { LabelStyled } from "./styled/LabelStyled";
 import { LabelProps } from "./types";
 import { Medium16Font } from "../../fonts/Fonts";
 
