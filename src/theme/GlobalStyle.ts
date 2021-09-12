@@ -3,6 +3,7 @@ import IBMPlexSansBold from "../components/fonts/assets/IBMPlexSans-Bold.ttf";
 import IBMPlexSansMedium from "../components/fonts/assets/IBMPlexSans-Medium.ttf";
 import IBMPlexSansRegular from "../components/fonts/assets/IBMPlexSans-Regular.ttf";
 
+// @ts-ignore
 export const GlobalStyle = createGlobalStyle`
   // Fonts
   @font-face {
@@ -25,6 +26,13 @@ export const GlobalStyle = createGlobalStyle`
   }
   
   html {
-  font-size: 16px;
+    font-size: 16px;
+    box-sizing: border-box;
+    // @ts-ignore
+    color: ${(props) => props.theme.colors.gray};
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
   }
 `;

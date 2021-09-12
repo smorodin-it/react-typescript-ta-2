@@ -1,13 +1,14 @@
 import React from "react";
+import "normalize.css";
 import { GlobalStyle } from "../theme";
-import { Theme } from "../theme/Theme";
+import { ThemeProv } from "../theme";
 
 function App() {
   return (
     <>
-      <Theme>
+      <ThemeProv>
         <GlobalStyle />
-      </Theme>
+      </ThemeProv>
     </>
   );
 }

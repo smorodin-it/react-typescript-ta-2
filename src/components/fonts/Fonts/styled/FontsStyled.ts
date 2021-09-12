@@ -4,6 +4,7 @@ import { rem } from "../../../../utils/functions/rem";
 const BaseFont = css`
   font-family: "IBM Plex Sans", sans-serif;
   font-style: normal;
+  color: inherit;
 `;
 
 const RegularFont = css`
