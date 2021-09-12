@@ -15,4 +15,12 @@ export const InputStyled = styled.input<InputProps>`
   border: 1px solid ${({ theme }) => theme.colors.light};
   border-radius: 6px;
   box-shadow: 0px 4px 8px rgba(44, 39, 56, 0.04);
+
+  :active,
+  :focus {
+    margin: -1px;
+
+    border: 2px solid ${({ theme }) => theme.colors.blue};
+    outline: unset;
+  }
 `;
