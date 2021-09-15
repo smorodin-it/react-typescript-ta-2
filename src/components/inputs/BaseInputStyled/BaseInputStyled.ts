@@ -1,8 +1,9 @@
 import { css } from "styled-components/macro";
+import { BaseInputPlaceholderStyled } from "./BaseInputPlaceholderStyled";
 
 export const BaseInputStyled = css`
   margin-bottom: 8px;
-  padding: 16px 57px 15px 16px;
+  padding: 16px 57px 16px 16px;
 
   background: ${({ theme }) => theme.colors.white};
 
@@ -15,7 +16,7 @@ export const BaseInputStyled = css`
   box-shadow: 0px 4px 8px rgba(44, 39, 56, 0.04);
 
   ::placeholder {
-    color: ${({ theme }) => theme.colors.glacier};
+    ${BaseInputPlaceholderStyled};
   }
 
   :active,
