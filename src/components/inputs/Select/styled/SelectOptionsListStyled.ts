@@ -1,10 +1,15 @@
 import styled from "styled-components/macro";
 
 export const SelectOptionsListStyled = styled.div`
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
 
+  width: 100%;
   padding: 12px 0px;
+
+  position: absolute;
+  top: 57px;
+  z-index: 100;
 
   background: ${({ theme }) => theme.colors.white};
 

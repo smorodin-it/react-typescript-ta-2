@@ -5,4 +5,6 @@ export const SelectWrapperStyled = styled.div`
   ${checkWide};
   display: inline-flex;
   flex-direction: column;
+
+  position: relative;
 `;
