@@ -14,6 +14,8 @@ export const ButtonStyled = styled.button<ButtonProps>`
   box-shadow: 0px 2px 4px rgba(44, 39, 56, 0.08),
     0px 4px 8px rgba(44, 39, 56, 0.08);
 
+  cursor: pointer;
+
   :hover {
     box-shadow: 0px 12px 24px rgba(44, 39, 56, 0.08),
       0px 24px 48px rgba(44, 39, 56, 0.16);
