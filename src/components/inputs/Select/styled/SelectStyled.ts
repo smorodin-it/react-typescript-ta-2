@@ -4,8 +4,7 @@ import { BaseInputStyled } from "../../BaseInputStyled/BaseInputStyled";
 import { checkWide } from "../../../../utils/css/cssSnippets";
 
 const hoveredStyle = css`
-  margin: -1px -1px 3px;
-
+  margin: -1px -1px 7px;
   border: 2px solid ${({ theme }) => theme.colors.blue};
   outline: unset;
 `;
@@ -16,7 +15,6 @@ const SelectStyled = styled.div<
   ${checkWide};
   ${BaseInputStyled};
 
-  margin-bottom: 4px;
   padding: 10px 11px 10px 16px;
 
   display: inline-flex;

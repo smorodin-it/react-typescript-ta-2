@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { SignUpForm } from "./SignUpForm";
 
 export default {
-  title: "Component/Input",
+  title: "Component/Forms",
   component: SignUpForm,
   argTypes: {},
 } as ComponentMeta<typeof SignUpForm>;
