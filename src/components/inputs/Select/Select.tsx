@@ -1,4 +1,4 @@
-import React, { FC, useContext, useRef, useState } from "react";
+import React, { FC, useContext, useEffect, useRef, useState } from "react";
 import { OptionObject, SelectProps } from "./types";
 import SelectStyled from "./styled/SelectStyled";
 import { SelectPlaceholderStyled } from "./styled/SelectPlaceholderStyled";
@@ -22,12 +22,21 @@ export const Select: FC<SelectProps> = ({
   ...props
 }) => {
   const [isOptionsOpened, setIsOptionsOpened] = useState<boolean>(false);
+  const [isHovered, setIsHovered] = useState<boolean>(false);
   const [selectedObject, setSelectedObject] = useState<OptionObject>(
     {} as OptionObject
   );
   const theme = useContext(ThemeContext);
   const ref = useRef(null);
   useOnClickOutside(ref, () => setIsOptionsOpened(false));
+
+  const onMouseEnterHandler = () => {
+    setIsHovered(true);
+  };
+
+  const onMouseLeaveHandler = () => {
+    setIsHovered(false);
+  };
 
   const onClickToggleShowOptionsHandler = () => {
     setIsOptionsOpened((prevState) => !prevState);
@@ -36,6 +45,7 @@ export const Select: FC<SelectProps> = ({
   const onClickOptionHandler = (option: OptionObject) => {
     setSelectedObject(option);
     setIsOptionsOpened(false);
+    setIsHovered(false);
     if (onChange) {
       onChange();
     }
@@ -44,11 +54,17 @@ export const Select: FC<SelectProps> = ({
   return (
     <>
       {label && <Label>{label}</Label>}
-      <SelectWrapperStyled wide={wide} ref={ref}>
+      <SelectWrapperStyled
+        wide={wide}
+        ref={ref}
+        onMouseEnter={onMouseEnterHandler}
+        onMouseLeave={onMouseLeaveHandler}
+      >
         <SelectStyled
           {...props}
           wide={wide}
           onClick={onClickToggleShowOptionsHandler}
+          isHovered={isHovered}
         >
           {selectedObject.label ?? (
             <SelectPlaceholderStyled>{placeholder}</SelectPlaceholderStyled>

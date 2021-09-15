@@ -21,6 +21,7 @@ export interface SelectProps
     SelectPropsToRewrite,
     SelectPropsToOmitInStyledComponent {
   label?: string;
-  wide?: boolean;
   error?: string;
+  wide?: boolean;
+  isHovered?: boolean;
 }

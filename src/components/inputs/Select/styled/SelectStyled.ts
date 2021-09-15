@@ -1,7 +1,14 @@
-import styled from "styled-components/macro";
+import styled, { css } from "styled-components/macro";
 import { SelectProps, SelectPropsToOmitInStyledComponent } from "../types";
 import { BaseInputStyled } from "../../BaseInputStyled/BaseInputStyled";
 import { checkWide } from "../../../../utils/css/cssSnippets";
+
+const hoveredStyle = css`
+  margin: -1px -1px 3px;
+
+  border: 2px solid ${({ theme }) => theme.colors.blue};
+  outline: unset;
+`;
 
 const SelectStyled = styled.div<
   Omit<SelectProps, keyof SelectPropsToOmitInStyledComponent>
@@ -18,12 +25,7 @@ const SelectStyled = styled.div<
 
   cursor: pointer;
 
-  :hover {
-    margin: -1px -1px 3px;
-
-    border: 2px solid ${({ theme }) => theme.colors.blue};
-    outline: unset;
-  }
+  ${({ isHovered }) => (isHovered ? hoveredStyle : null)};
 `;
 
 export default SelectStyled;
