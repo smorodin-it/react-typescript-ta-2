@@ -16,4 +16,5 @@ const Template: ComponentStory<typeof Checkbox> = (args) => (
 export const BaseCheckbox = Template.bind({});
 BaseCheckbox.args = {
   checked: false,
+  children: "Some text",
 };
