@@ -2,7 +2,6 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import { Select } from "./Select";
-import { OptionObject } from "./types";
 
 export default {
   title: "Component/Input",
