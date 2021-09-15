@@ -18,6 +18,7 @@ export const Select: FC<SelectProps> = ({
   placeholder,
   error,
   onChange,
+  wide,
   ...props
 }) => {
   const [isOptionsOpened, setIsOptionsOpened] = useState<boolean>(false);
@@ -43,8 +44,12 @@ export const Select: FC<SelectProps> = ({
   return (
     <>
       {label && <Label>{label}</Label>}
-      <SelectWrapperStyled ref={ref}>
-        <SelectStyled {...props} onClick={onClickToShowOptionsHandler}>
+      <SelectWrapperStyled wide={wide} ref={ref}>
+        <SelectStyled
+          {...props}
+          wide={wide}
+          onClick={onClickToShowOptionsHandler}
+        >
           {selectedObject.label ?? (
             <SelectPlaceholderStyled>{placeholder}</SelectPlaceholderStyled>
           )}
