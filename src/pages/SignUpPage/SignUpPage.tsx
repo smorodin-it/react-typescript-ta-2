@@ -1,7 +1,8 @@
 import React, { FC } from "react";
+import { LayoutCentredStyled } from "../../components/layouts/styled/LayoutCentredStyled";
 
 const SignUpPage: FC = () => {
-  return <div></div>;
+  return <LayoutCentredStyled>SignUpForm</LayoutCentredStyled>;
 };
 
 export default SignUpPage;
