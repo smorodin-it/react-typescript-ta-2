@@ -8,10 +8,12 @@ export interface OptionObject {
 
 export interface SelectPropsToRewrite {
   placeholder?: FC | string;
+  onChange: () => void;
 }
 
 export interface SelectPropsToOmitInStyledComponent {
   options: OptionObject[];
+  onChange: () => void;
 }
 
 export interface SelectProps

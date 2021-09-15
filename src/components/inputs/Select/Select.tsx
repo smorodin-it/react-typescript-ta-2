@@ -17,6 +17,7 @@ export const Select: FC<SelectProps> = ({
   label,
   placeholder,
   error,
+  onChange,
   ...props
 }) => {
   const [isOptionsOpened, setIsOptionsOpened] = useState<boolean>(false);
@@ -34,7 +35,11 @@ export const Select: FC<SelectProps> = ({
   const onClickOptionHandler = (option: OptionObject) => {
     setSelectedObject(option);
     setIsOptionsOpened(false);
+    if (onChange) {
+      onChange();
+    }
   };
+
   return (
     <>
       {label && <Label>{label}</Label>}
