@@ -1,4 +1,4 @@
-import React, { FC, useContext, useState } from "react";
+import React, { FC, useContext, useRef, useState } from "react";
 import { OptionObject, SelectProps } from "./types";
 import SelectStyled from "./styled/SelectStyled";
 import { SelectPlaceholderStyled } from "./styled/SelectPlaceholderStyled";
@@ -10,6 +10,7 @@ import { SelectListItemStyled } from "./styled/SelectListItemStyled";
 import { Regular16Font } from "../../fonts/Fonts";
 import { ThemeContext } from "styled-components";
 import { SelectArrowIconStyled } from "./styled/SelectArrowIconStyled";
+import { useOnClickOutside } from "../../../utils/hooks/useOnClickOutside";
 
 export const Select: FC<SelectProps> = ({
   options,
@@ -23,6 +24,8 @@ export const Select: FC<SelectProps> = ({
     {} as OptionObject
   );
   const theme = useContext(ThemeContext);
+  const ref = useRef(null);
+  useOnClickOutside(ref, () => setIsOptionsOpened(false));
 
   const onClickToShowOptionsHandler = () => {
     setIsOptionsOpened(true);
@@ -32,11 +35,10 @@ export const Select: FC<SelectProps> = ({
     setSelectedObject(option);
     setIsOptionsOpened(false);
   };
-
   return (
     <>
       {label && <Label>{label}</Label>}
-      <SelectWrapperStyled>
+      <SelectWrapperStyled ref={ref}>
         <SelectStyled {...props} onClick={onClickToShowOptionsHandler}>
           {selectedObject.label ?? (
             <SelectPlaceholderStyled>{placeholder}</SelectPlaceholderStyled>
