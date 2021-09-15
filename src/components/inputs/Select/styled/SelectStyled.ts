@@ -9,11 +9,21 @@ const SelectStyled = styled.div<
   ${checkWide};
   ${BaseInputStyled};
 
-  display: inline-block;
-
   margin-bottom: 4px;
+  padding-right: 11px;
+
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
 
   cursor: pointer;
+
+  :hover {
+    margin: -1px -1px 3px;
+
+    border: 2px solid ${({ theme }) => theme.colors.blue};
+    outline: unset;
+  }
 `;
 
 export default SelectStyled;

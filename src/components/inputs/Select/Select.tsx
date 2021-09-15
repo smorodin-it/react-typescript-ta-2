@@ -9,6 +9,7 @@ import { SelectWrapperStyled } from "./styled/SelectWrapperStyled";
 import { SelectListItemStyled } from "./styled/SelectListItemStyled";
 import { Regular16Font } from "../../fonts/Fonts";
 import { ThemeContext } from "styled-components";
+import { SelectArrowIconStyled } from "./styled/SelectArrowIconStyled";
 
 export const Select: FC<SelectProps> = ({
   options,
@@ -17,9 +18,6 @@ export const Select: FC<SelectProps> = ({
   error,
   ...props
 }) => {
-  // const [optionsList, setOptionsList] = useState<OptionObject[]>(
-  //   [] as OptionObject[]
-  // );
   const [isOptionsOpened, setIsOptionsOpened] = useState<boolean>(false);
   const [selectedObject, setSelectedObject] = useState<OptionObject>(
     {} as OptionObject
@@ -43,6 +41,7 @@ export const Select: FC<SelectProps> = ({
           {selectedObject.label ?? (
             <SelectPlaceholderStyled>{placeholder}</SelectPlaceholderStyled>
           )}
+          <SelectArrowIconStyled />
         </SelectStyled>
         {isOptionsOpened && (
           <SelectOptionsListStyled>
@@ -59,7 +58,9 @@ export const Select: FC<SelectProps> = ({
           </SelectOptionsListStyled>
         )}
       </SelectWrapperStyled>
-      {error && <ValidationErrorMessage>{error}</ValidationErrorMessage>}
+      {error && !isOptionsOpened && (
+        <ValidationErrorMessage>{error}</ValidationErrorMessage>
+      )}
     </>
   );
 };
