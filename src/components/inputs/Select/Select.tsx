@@ -11,6 +11,7 @@ import { Regular16Font } from "../../fonts/Fonts";
 import { ThemeContext } from "styled-components";
 import { SelectArrowIconStyled } from "./styled/SelectArrowIconStyled";
 import { useOnClickOutside } from "../../../utils/hooks/useOnClickOutside";
+import { SelectComponentWrapperStyled } from "./styled/SelectComponentWrapperStyled";
 
 export const Select: FC<SelectProps> = ({
   options,
@@ -19,6 +20,7 @@ export const Select: FC<SelectProps> = ({
   error,
   onChange,
   wide,
+  style,
   ...props
 }) => {
   const [isOptionsOpened, setIsOptionsOpened] = useState<boolean>(false);
@@ -52,7 +54,7 @@ export const Select: FC<SelectProps> = ({
   };
 
   return (
-    <>
+    <SelectComponentWrapperStyled style={style}>
       {label && <Label>{label}</Label>}
       <SelectWrapperStyled
         wide={wide}
@@ -89,6 +91,6 @@ export const Select: FC<SelectProps> = ({
       {error && !isOptionsOpened && (
         <ValidationErrorMessage>{error}</ValidationErrorMessage>
       )}
-    </>
+    </SelectComponentWrapperStyled>
   );
 };

@@ -10,8 +10,8 @@ import { Button } from "../../buttons/Button";
 export const SignUpForm: FC = () => {
   return (
     <Card>
-      <Bold34Font>Регистрация</Bold34Font>
-      <Regular16Font>
+      <Bold34Font style={{ marginBottom: "8px" }}>Регистрация</Bold34Font>
+      <Regular16Font style={{ marginBottom: "53px" }}>
         Уже есть аккаунт?{" "}
         <a href="#">
           <Regular16Font>Войти</Regular16Font>
@@ -22,24 +22,28 @@ export const SignUpForm: FC = () => {
         name="name"
         label="Имя"
         placeholder="Введите Ваше имя"
+        style={{ marginBottom: "33px" }}
       />
       <Input
         type="email"
         name="email"
         label="Email"
         placeholder="Введите Ваш email"
+        style={{ marginBottom: "33px" }}
       />
       <Input
         type="tel"
         name="phone"
         label="Номер телефона"
         placeholder="Введите номер телефона"
+        style={{ marginBottom: "33px" }}
       />
       <Select
         onChange={() => null}
         options={languagesOptionsList}
         label="Язык"
         placeholder="Язык"
+        style={{ marginBottom: "33px" }}
       />
       <Checkbox setChecked={() => null}>
         Принимаю <a href="#">условия</a> использования
