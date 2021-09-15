@@ -1,9 +1,21 @@
-import { Dispatch, InputHTMLAttributes, SetStateAction } from "react";
+import { InputHTMLAttributes } from "react";
 
-export interface CheckboxPropsForOmitInStyledComponent {
-  setChecked: Dispatch<SetStateAction<boolean>>;
+export interface CheckboxPropsToRewrite {
+  onChange: () => void;
+}
+
+export interface CheckboxPropsToOmitInStyledComponent {
+  onChange: () => void;
 }
 
 export interface CheckboxProps
-  extends InputHTMLAttributes<HTMLInputElement>,
-    CheckboxPropsForOmitInStyledComponent {}
+  extends Omit<
+      InputHTMLAttributes<HTMLInputElement>,
+      keyof CheckboxPropsToRewrite
+    >,
+    CheckboxPropsToRewrite,
+    CheckboxPropsToOmitInStyledComponent {}
+
+// export interface CheckboxProps
+//   extends InputHTMLAttributes<HTMLInputElement>,
+//     CheckboxPropsForOmitInStyledComponent {}

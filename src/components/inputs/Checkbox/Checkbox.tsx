@@ -8,7 +8,8 @@ import { ThemeContext } from "styled-components";
 // TODO: Need to improve logic with getting checked status from props, and settings checked status/field in upper component
 
 export const Checkbox: FC<CheckboxProps> = ({
-  setChecked,
+  onChange,
+  style,
   children,
   ...props
 }) => {
@@ -17,13 +18,13 @@ export const Checkbox: FC<CheckboxProps> = ({
 
   const onClickElementHandler = () => {
     setIsChecked((prevState) => !prevState);
-    if (setChecked) {
-      setChecked((prevState) => !prevState);
+    if (onChange) {
+      onChange();
     }
   };
 
   return (
-    <CheckboxWrapperStyled>
+    <CheckboxWrapperStyled style={style}>
       <CheckboxFieldStyled
         {...props}
         checked={isChecked}

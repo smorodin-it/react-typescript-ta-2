@@ -45,7 +45,7 @@ export const SignUpForm: FC = () => {
         placeholder="Язык"
         style={{ marginBottom: "33px" }}
       />
-      <Checkbox setChecked={() => null}>
+      <Checkbox onChange={() => null} style={{ marginBottom: "33px" }}>
         Принимаю <a href="#">условия</a> использования
       </Checkbox>
       <Button wide={false} onClick={() => null}>

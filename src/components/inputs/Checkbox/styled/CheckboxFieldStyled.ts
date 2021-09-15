@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components/macro";
-import { CheckboxProps, CheckboxPropsForOmitInStyledComponent } from "../types";
+import { CheckboxProps, CheckboxPropsToOmitInStyledComponent } from "../types";
 import checkedIcon from "../assets/check-icon.svg";
 
 const checkedStyled = css`
@@ -8,7 +8,7 @@ const checkedStyled = css`
 `;
 
 export const CheckboxFieldStyled = styled.div<
-  Omit<CheckboxProps, keyof CheckboxPropsForOmitInStyledComponent>
+  Omit<CheckboxProps, keyof CheckboxPropsToOmitInStyledComponent>
 >`
   width: 28px;
   height: 28px;
