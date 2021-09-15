@@ -17,7 +17,7 @@ const SelectStyled = styled.div<
   ${BaseInputStyled};
 
   margin-bottom: 4px;
-  padding: 11px 11px 11px 16px;
+  padding: 10px 11px 10px 16px;
 
   display: inline-flex;
   justify-content: space-between;
