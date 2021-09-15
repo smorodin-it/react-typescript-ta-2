@@ -10,10 +10,14 @@ export interface SelectPropsToRewrite {
   placeholder?: FC | string;
 }
 
+export interface SelectPropsToOmitInStyledComponent {
+  options: OptionObject[];
+}
+
 export interface SelectProps
   extends Omit<HTMLAttributes<HTMLDivElement>, keyof SelectPropsToRewrite>,
-    SelectPropsToRewrite {
-  options: OptionObject[];
+    SelectPropsToRewrite,
+    SelectPropsToOmitInStyledComponent {
   label?: string;
   wide?: boolean;
   error?: string;
