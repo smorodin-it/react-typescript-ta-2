@@ -29,8 +29,8 @@ export const Select: FC<SelectProps> = ({
   const ref = useRef(null);
   useOnClickOutside(ref, () => setIsOptionsOpened(false));
 
-  const onClickToShowOptionsHandler = () => {
-    setIsOptionsOpened(true);
+  const onClickToggleShowOptionsHandler = () => {
+    setIsOptionsOpened((prevState) => !prevState);
   };
 
   const onClickOptionHandler = (option: OptionObject) => {
@@ -48,7 +48,7 @@ export const Select: FC<SelectProps> = ({
         <SelectStyled
           {...props}
           wide={wide}
-          onClick={onClickToShowOptionsHandler}
+          onClick={onClickToggleShowOptionsHandler}
         >
           {selectedObject.label ?? (
             <SelectPlaceholderStyled>{placeholder}</SelectPlaceholderStyled>
