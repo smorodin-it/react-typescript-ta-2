@@ -1,4 +1,4 @@
-import React, { FC, useContext, useEffect, useRef, useState } from "react";
+import React, { FC, useContext, useRef, useState } from "react";
 import { OptionObject, SelectProps } from "./types";
 import SelectStyled from "./styled/SelectStyled";
 import { SelectPlaceholderStyled } from "./styled/SelectPlaceholderStyled";

@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from "react";
+
 export enum SignUpFormFields {
   NAME = "name",
   EMAIL = "email",
@@ -9,14 +11,12 @@ export type SubmitObject = {
   [key in SignUpFormFields]: string;
 };
 
-// export interface SubmitObject {
-//   name: string;
-//   email: string;
-//   phone: string;
-//   lang: string;
-//   confirmTerms: boolean;
-// }
-
 export type ErrorObject = {
   [key in keyof SubmitObject | string]?: string | string[] | undefined;
 };
+
+export interface SignUpFormProps {
+  onSubmit: () => void;
+  submitObject: SubmitObject;
+  setSubmitObject: Dispatch<SetStateAction<SubmitObject>>;
+}

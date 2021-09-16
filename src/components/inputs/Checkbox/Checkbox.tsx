@@ -1,4 +1,4 @@
-import React, { FC, useContext, useState } from "react";
+import React, { FC, useContext } from "react";
 import { CheckboxFieldStyled } from "./styled/CheckboxFieldStyled";
 import { CheckboxProps } from "./types";
 import { Medium16Font } from "../../fonts/Fonts";
