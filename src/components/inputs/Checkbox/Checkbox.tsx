@@ -5,11 +5,12 @@ import { Medium16Font } from "../../fonts/Fonts";
 import { CheckboxWrapperStyled } from "./styled/CheckboxWrapperStyled";
 import { ThemeContext } from "styled-components";
 
-// TODO: Need to improve logic with getting checked status from props, and settings checked status/field in upper component
+// TODO: Need to add clickable text option
 
 export const Checkbox: FC<CheckboxProps> = ({
   checked,
   onChange,
+  clickableText,
   children,
   style,
   ...props
@@ -27,10 +28,7 @@ export const Checkbox: FC<CheckboxProps> = ({
         checked={checked}
         onClick={onClickElementHandler}
       />
-      <Medium16Font
-        onClick={onClickElementHandler}
-        style={{ color: theme.colors.darkGrey, cursor: "pointer" }}
-      >
+      <Medium16Font style={{ color: theme.colors.darkGrey, cursor: "pointer" }}>
         {children}
       </Medium16Font>
     </CheckboxWrapperStyled>

@@ -14,7 +14,9 @@ export interface CheckboxProps
       keyof CheckboxPropsToRewrite
     >,
     CheckboxPropsToRewrite,
-    CheckboxPropsToOmitInStyledComponent {}
+    CheckboxPropsToOmitInStyledComponent {
+  clickableText?: boolean;
+}
 
 // export interface CheckboxProps
 //   extends InputHTMLAttributes<HTMLInputElement>,
