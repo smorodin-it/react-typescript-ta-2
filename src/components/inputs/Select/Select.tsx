@@ -49,7 +49,7 @@ export const Select: FC<SelectProps> = ({
     setIsOptionsOpened(false);
     setIsHovered(false);
     if (onChange) {
-      onChange();
+      onChange(option);
     }
   };
 

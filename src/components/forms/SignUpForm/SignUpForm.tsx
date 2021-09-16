@@ -21,6 +21,7 @@ import {
   regexpPhone,
   regexpUsername,
 } from "../../../utils/constants/regexp";
+import { OptionObject } from "../../inputs/Select/types";
 
 export const SignUpForm: FC = () => {
   const [submitObject, setSubmitObject] = useState<SubmitObject>({
@@ -35,6 +36,7 @@ export const SignUpForm: FC = () => {
 
   const onSubmitFormHandler = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    alert(JSON.stringify(submitObject));
   };
 
   const removeError = (event: ChangeEvent<HTMLInputElement>) => {
@@ -48,7 +50,6 @@ export const SignUpForm: FC = () => {
   };
 
   const onBlurValidateInputHandler = (event: ChangeEvent<HTMLInputElement>) => {
-    console.log("event: ", event);
     let errorMessage: string = "Введено не корректное значение";
     switch (event.target.name) {
       case SignUpFormFields.NAME:
@@ -85,6 +86,13 @@ export const SignUpForm: FC = () => {
     }));
   };
 
+  const onChangeSelectHandler = (option: OptionObject) => {
+    setSubmitObject((prevState) => ({
+      ...prevState,
+      [SignUpFormFields.LANG]: option.value,
+    }));
+  };
+
   const onChangeInputHandler = (event: ChangeEvent<HTMLInputElement>) => {
     switch (event.target.name) {
       case SignUpFormFields.NAME:
@@ -103,7 +111,8 @@ export const SignUpForm: FC = () => {
 
   useEffect(() => {
     console.log("errors: ", errors);
-  }, [errors]);
+    console.log("submitObject: ", submitObject);
+  }, [errors, submitObject]);
 
   return (
     <Card>
@@ -158,7 +167,7 @@ export const SignUpForm: FC = () => {
             error={errors[SignUpFormFields.PHONE]}
           />
           <Select
-            onChange={() => null}
+            onChange={onChangeSelectHandler}
             options={languagesOptionsList}
             label="Язык"
             placeholder="Язык"
@@ -174,7 +183,11 @@ export const SignUpForm: FC = () => {
           <Button
             type={"submit"}
             onClick={() => null}
-            disabled={!isTermsConfirmed}
+            disabled={
+              !isTermsConfirmed ||
+              !!Object.keys(errors).length ||
+              !!Object.values(submitObject).filter((el) => el === "").length
+            }
           >
             Зарегистрироваться
           </Button>
