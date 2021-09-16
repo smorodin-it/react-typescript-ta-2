@@ -1,8 +1,10 @@
 import styled from "styled-components/macro";
 
-export const InputWrapperStyled = styled.div`
+export const FieldsetFlexStyled = styled.fieldset`
   display: flex;
   flex-direction: column;
 
-  position: relative;
+  margin: 0;
+  padding: 0;
+  border: none;
 `;

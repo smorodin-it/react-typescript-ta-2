@@ -9,7 +9,7 @@ export const Input: FC<InputProps> = ({ label, error, style, ...props }) => {
   return (
     <InputWrapperStyled style={style}>
       {label && <Label htmlFor={props.name}>{label}</Label>}
-      <InputStyled id={props.name} autoComplete={"off"} {...props} />
+      <InputStyled {...props} id={props.name} autoComplete={"off"} />
       {error && <ValidationErrorMessage>{error}</ValidationErrorMessage>}
     </InputWrapperStyled>
   );
