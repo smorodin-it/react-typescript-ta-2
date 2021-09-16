@@ -5,6 +5,7 @@ import {
   SignUpFormFields,
   SubmitObject,
 } from "../../components/forms/SignUpForm/types";
+import { SignUpFormWrapper } from "./styled/SignUpFormWrapper";
 
 const SignUpPage: FC = () => {
   const [submitObject, setSubmitObject] = useState<SubmitObject>({
@@ -20,11 +21,13 @@ const SignUpPage: FC = () => {
 
   return (
     <LayoutCentredStyled>
-      <SignUpForm
-        submitObject={submitObject}
-        setSubmitObject={setSubmitObject}
-        onSubmit={onSubmitFormHandler}
-      />
+      <SignUpFormWrapper>
+        <SignUpForm
+          submitObject={submitObject}
+          setSubmitObject={setSubmitObject}
+          onSubmit={onSubmitFormHandler}
+        />
+      </SignUpFormWrapper>
     </LayoutCentredStyled>
   );
 };

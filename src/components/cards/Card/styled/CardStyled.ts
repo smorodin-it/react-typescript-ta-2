@@ -1,6 +1,7 @@
 import styled from "styled-components/macro";
 
 export const CardStyled = styled.div`
+  width: 100%;
   padding: 41px 30px;
 
   display: inline-flex;
