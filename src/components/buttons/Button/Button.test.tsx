@@ -5,7 +5,7 @@ import { composeStories } from "@storybook/testing-react";
 
 const { DefaultButton, ButtonDisabled, ButtonWide } = composeStories(stories);
 
-describe("Button", () => {
+describe("Button component", () => {
   it("should be render on screen", () => {
     render(<DefaultButton />);
     const btn = screen.getByRole("button");
