@@ -8,24 +8,19 @@ import { theme } from "../src/theme";
 
 import { GlobalStyle } from "../src/theme/";
 
+// @react-theming/storybook-addon
 // pass ThemeProvider and array of your themes to decorator
 addDecorator(withThemes(ThemeProvider, [theme]));
-// addDecorator((Story) => (
-//   <>
-//     <GlobalStyle />
-//     <Story />
-//   </>
-// ));
+
+const AllProviders = (Story, ctx) => (
+  <ThemeProvider theme={theme}>
+    <GlobalStyle />
+    <Story {...ctx} />
+  </ThemeProvider>
+);
 
 // Global decorator to apply the styles to all stories
-export const decorators = [
-  (Story) => (
-    <>
-      <GlobalStyle />
-      <Story />
-    </>
-  ),
-];
+export const decorators = [AllProviders];
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },

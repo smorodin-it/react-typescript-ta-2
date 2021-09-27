@@ -2,7 +2,6 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import { Button } from "./Button";
-import { Medium16Font } from "../../fonts/Fonts";
 
 export default {
   title: "Component/Button",
@@ -12,19 +11,19 @@ export default {
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
-export const Button_ = Template.bind({});
-Button_.args = {
-  children: <Medium16Font>Button</Medium16Font>,
+export const DefaultButton = Template.bind({});
+DefaultButton.args = {
+  text: "Button",
 };
 
 export const ButtonWide = Template.bind({});
 ButtonWide.args = {
-  children: <Medium16Font>Button</Medium16Font>,
+  ...DefaultButton.args,
   wide: true,
 };
 
 export const ButtonDisabled = Template.bind({});
 ButtonDisabled.args = {
-  children: <Medium16Font>Button</Medium16Font>,
+  ...DefaultButton.args,
   disabled: true,
 };

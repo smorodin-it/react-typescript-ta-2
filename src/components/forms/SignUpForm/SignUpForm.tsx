@@ -159,15 +159,14 @@ export const SignUpForm: FC<SignUpFormProps> = ({
           </Checkbox>
           <Button
             type={"submit"}
+            text="Зарегистрироваться"
             onClick={() => null}
             disabled={
               !isTermsConfirmed ||
               !!Object.keys(errors).length ||
               !!Object.values(submitObject).filter((el) => el === "").length
             }
-          >
-            Зарегистрироваться
-          </Button>
+          />
         </FieldsetFlexStyled>
       </form>
     </Card>

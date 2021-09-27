@@ -1,8 +1,8 @@
 import styled from "styled-components/macro";
-import { ButtonProps } from "../types";
+import { ButtonStyledProps } from "../types";
 import { checkWide } from "../../../../utils/css/cssSnippets";
 
-export const ButtonStyled = styled.button<ButtonProps>`
+export const ButtonStyled = styled.button<ButtonStyledProps>`
   ${checkWide};
   padding: 18px 65px 17px 65px;
 
