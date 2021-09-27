@@ -31,5 +31,3 @@ describe("Input component", () => {
     expect(error).toBeInTheDocument();
   });
 });
-
-
