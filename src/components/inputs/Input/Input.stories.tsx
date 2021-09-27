@@ -18,21 +18,19 @@ BaseInput.args = {
 
 export const WideInput = Template.bind({});
 WideInput.args = {
+  ...BaseInput.args,
   wide: true,
-  placeholder: "Placeholder",
 };
 
 export const InputWithLabel = Template.bind({});
 InputWithLabel.args = {
+  ...BaseInput.args,
   label: "Label",
   name: "test-input",
-  placeholder: "Placeholder",
 };
 
 export const InputWithError = Template.bind({});
 InputWithError.args = {
-  label: "Label",
-  name: "test-input",
+  ...InputWithLabel.args,
   error: "validation error",
-  placeholder: "Placeholder",
 };
