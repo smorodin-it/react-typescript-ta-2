@@ -1,24 +1,31 @@
-import React, { FC, useContext } from "react";
+import React, { FC, MouseEvent, useContext } from "react";
 import { CheckboxFieldStyled } from "./styled/CheckboxFieldStyled";
 import { CheckboxProps } from "./types";
 import { Medium16Font } from "../../fonts/Fonts";
 import { CheckboxWrapperStyled } from "./styled/CheckboxWrapperStyled";
 import { ThemeContext } from "styled-components";
 
-// TODO: Need to add clickable text option
-
 export const Checkbox: FC<CheckboxProps> = ({
   checked,
   onChange,
+  text,
+  fontComponent,
   clickableText,
-  children,
   style,
   ...props
 }) => {
   const theme = useContext(ThemeContext);
 
+  const FontComponent = fontComponent ?? Medium16Font;
+
   const onClickElementHandler = () => {
     onChange();
+  };
+
+  const onClickTextHandler = (_: MouseEvent<HTMLSpanElement>): void => {
+    if (clickableText) {
+      onClickElementHandler();
+    }
   };
 
   return (
@@ -28,9 +35,15 @@ export const Checkbox: FC<CheckboxProps> = ({
         checked={checked}
         onClick={onClickElementHandler}
       />
-      <Medium16Font style={{ color: theme.colors.darkGrey, cursor: "pointer" }}>
-        {children}
-      </Medium16Font>
+      <FontComponent
+        onClick={onClickTextHandler}
+        style={{
+          color: theme.colors.darkGrey,
+          cursor: clickableText ? "pointer" : "default",
+        }}
+      >
+        {text}
+      </FontComponent>
     </CheckboxWrapperStyled>
   );
 };
