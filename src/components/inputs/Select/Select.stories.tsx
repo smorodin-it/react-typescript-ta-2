@@ -37,7 +37,7 @@ WideSelect.args = {
 export const WideOptionsSelect = Template.bind({});
 WideOptionsSelect.args = {
   ...BaseSelect.args,
-  wideOptions: true,
+  wideOptions: false,
   options: [
     {
       label: "Very long item option, that can go outside of the block",
