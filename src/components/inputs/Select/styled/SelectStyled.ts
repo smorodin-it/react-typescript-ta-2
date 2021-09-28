@@ -10,8 +10,8 @@ const hoveredStyle = css`
 `;
 
 const SelectStyled = styled.div<SelectStyledProps>`
-  ${checkWide};
   ${BaseInputStyled};
+  ${checkWide};
 
   padding: 10px 11px 10px 16px;
 

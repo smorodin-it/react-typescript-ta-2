@@ -10,6 +10,7 @@ export const SelectArrowIconStyled = styled.div<SelectArrowIconStyledProps>`
   width: 30px;
   height: 30px;
   margin-left: 16px;
+
   ${({ isHovered }) => (isHovered ? marginRightOnHover : null)};
 
   background: url("${arrowDown}") no-repeat center;
