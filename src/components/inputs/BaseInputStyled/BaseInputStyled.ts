@@ -5,6 +5,8 @@ export const BaseInputStyled = css`
   margin-bottom: 8px;
   padding: 16px 57px 16px 16px;
 
+  width: 360px;
+
   background: ${({ theme }) => theme.colors.white};
 
   font-family: "IBM Plex Sans", sans-serif;
