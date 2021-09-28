@@ -1,7 +1,19 @@
 import { InputHTMLAttributes } from "react";
+import { CSSProperties } from "styled-components";
 
-export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  wide?: boolean;
+interface InputWrapperStyledPropsToOmit {
   label?: string;
   error?: string | string[];
 }
+
+export interface InputProps
+  extends InputHTMLAttributes<HTMLInputElement>,
+    WideProp,
+    InputWrapperStyledPropsToOmit {
+  wrapperStyle?: CSSProperties;
+}
+
+export type InputWrapperStyledProps = Omit<
+  InputProps,
+  keyof InputWrapperStyledPropsToOmit
+>;

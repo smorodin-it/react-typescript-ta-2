@@ -1,8 +1,9 @@
 import { ButtonHTMLAttributes, FC } from "react";
 
-export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps
+  extends ButtonHTMLAttributes<HTMLButtonElement>,
+    WideProp {
   text: string;
-  wide?: boolean;
   fontComponent?: FC;
 }
 
