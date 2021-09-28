@@ -26,7 +26,8 @@ export interface SelectProps
   extends Omit<HTMLAttributes<HTMLDivElement>, keyof SelectPropsToRewrite>,
     SelectPropsToRewrite,
     SelectPropsToOmitInStyledComponent,
-    WideProp {
+    WideProp,
+    WideOptionsProp {
   label?: string;
   error?: string;
   isHovered?: boolean;
@@ -34,3 +35,5 @@ export interface SelectProps
 }
 
 export interface SelectComponentWrapperStyledProps extends WideProp {}
+
+export interface SelectOptionsListStyledProps extends WideOptionsProp {}

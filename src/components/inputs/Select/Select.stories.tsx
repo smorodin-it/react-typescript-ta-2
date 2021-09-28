@@ -15,9 +15,12 @@ export const BaseSelect = Template.bind({});
 BaseSelect.args = {
   label: "Label",
   placeholder: "Placeholder",
+  wide: false,
+  wideOptions: false,
   options: [
     {
-      label: "Item 1",
+      label:
+        "Item 1Item 1Item 1Item 1Item 1Item 1Item 1Item 1Item 1Item 1Item 1Item 1",
       value: "item 1",
     },
     { label: "Item 2", value: "item 2" },

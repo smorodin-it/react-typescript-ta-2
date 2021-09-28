@@ -1,10 +1,12 @@
 import styled from "styled-components/macro";
+import { SelectOptionsListStyledProps } from "../types";
+import { checkWideOptions } from "../../../../utils/css/cssSnippets";
 
-export const SelectOptionsListStyled = styled.div`
+export const SelectOptionsListStyled = styled.div<SelectOptionsListStyledProps>`
   display: flex;
   flex-direction: column;
 
-  width: 100%;
+  ${checkWideOptions};
   padding: 12px 0px;
 
   position: absolute;

@@ -12,6 +12,7 @@ import { ThemeContext } from "styled-components";
 import { SelectArrowIconStyled } from "./styled/SelectArrowIconStyled";
 import { useOnClickOutside } from "../../../utils/hooks/useOnClickOutside";
 import { SelectComponentWrapperStyled } from "./styled/SelectComponentWrapperStyled";
+import { SelectSelectedOptionStyled } from "./styled/SelectSelectedOptionStyled";
 
 export const Select: FC<SelectProps> = ({
   options,
@@ -20,6 +21,7 @@ export const Select: FC<SelectProps> = ({
   error,
   onChange,
   wide,
+  wideOptions,
   wrapperStyle,
   ...props
 }) => {
@@ -67,20 +69,29 @@ export const Select: FC<SelectProps> = ({
           wide={wide}
           onClick={onClickToggleShowOptionsHandler}
           isHovered={isHovered}
+          title={selectedObject.label ?? null}
         >
-          {selectedObject.label ?? (
+          {!!selectedObject.label && (
+            <SelectSelectedOptionStyled>
+              {selectedObject.label}
+            </SelectSelectedOptionStyled>
+          )}
+          {!selectedObject.label && (
             <SelectPlaceholderStyled>{placeholder}</SelectPlaceholderStyled>
           )}
           <SelectArrowIconStyled />
         </SelectStyled>
         {isOptionsOpened && (
-          <SelectOptionsListStyled>
+          <SelectOptionsListStyled wideOptions={wideOptions}>
             {options.map((option) => (
               <SelectListItemStyled
                 key={option.value}
                 onClick={() => onClickOptionHandler(option)}
+                title={option.label}
               >
-                <Regular16Font style={{ color: theme.colors.darkGrey }}>
+                <Regular16Font
+                  style={{ color: theme.colors.darkGrey, whiteSpace: "nowrap" }}
+                >
                   {option.label}
                 </Regular16Font>
               </SelectListItemStyled>
