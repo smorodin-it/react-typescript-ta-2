@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components/macro";
-import { SelectProps, SelectPropsToOmitInStyledComponent } from "../types";
+import { SelectStyledProps } from "../types";
 import { BaseInputStyled } from "../../BaseInputStyled/BaseInputStyled";
 import { checkWide } from "../../../../utils/css/cssSnippets";
 
@@ -9,9 +9,7 @@ const hoveredStyle = css`
   outline: unset;
 `;
 
-const SelectStyled = styled.div<
-  Omit<SelectProps, keyof SelectPropsToOmitInStyledComponent>
->`
+const SelectStyled = styled.div<SelectStyledProps>`
   ${checkWide};
   ${BaseInputStyled};
 

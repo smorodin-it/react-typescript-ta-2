@@ -1,4 +1,5 @@
 import { FC, HTMLAttributes } from "react";
+import { CSSProperties } from "styled-components";
 
 export interface OptionObject {
   label: string;
@@ -16,12 +17,20 @@ export interface SelectPropsToOmitInStyledComponent {
   onChange: (option: OptionObject) => void;
 }
 
+export type SelectStyledProps = Omit<
+  SelectProps,
+  keyof SelectPropsToOmitInStyledComponent
+>;
+
 export interface SelectProps
   extends Omit<HTMLAttributes<HTMLDivElement>, keyof SelectPropsToRewrite>,
     SelectPropsToRewrite,
-    SelectPropsToOmitInStyledComponent {
+    SelectPropsToOmitInStyledComponent,
+    WideProp {
   label?: string;
   error?: string;
-  wide?: boolean;
   isHovered?: boolean;
+  wrapperStyle?: CSSProperties;
 }
+
+export interface SelectComponentWrapperStyledProps extends WideProp {}

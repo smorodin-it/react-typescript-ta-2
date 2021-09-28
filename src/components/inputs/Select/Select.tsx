@@ -20,7 +20,7 @@ export const Select: FC<SelectProps> = ({
   error,
   onChange,
   wide,
-  style,
+  wrapperStyle,
   ...props
 }) => {
   const [isOptionsOpened, setIsOptionsOpened] = useState<boolean>(false);
@@ -54,7 +54,7 @@ export const Select: FC<SelectProps> = ({
   };
 
   return (
-    <SelectComponentWrapperStyled style={style}>
+    <SelectComponentWrapperStyled wide={wide} style={wrapperStyle}>
       {label && <Label>{label}</Label>}
       <SelectWrapperStyled
         wide={wide}
