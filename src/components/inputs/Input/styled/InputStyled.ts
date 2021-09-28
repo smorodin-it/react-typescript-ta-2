@@ -4,6 +4,6 @@ import { BaseInputStyled } from "../../BaseInputStyled/BaseInputStyled";
 import { checkWide } from "../../../../utils/css/cssSnippets";
 
 export const InputStyled = styled.input<InputProps>`
-  ${checkWide};
   ${BaseInputStyled}
+  ${checkWide};
 `;
