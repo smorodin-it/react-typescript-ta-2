@@ -79,7 +79,7 @@ export const Select: FC<SelectProps> = ({
           {!selectedObject.label && (
             <SelectPlaceholderStyled>{placeholder}</SelectPlaceholderStyled>
           )}
-          <SelectArrowIconStyled />
+          <SelectArrowIconStyled isHovered={isHovered} />
         </SelectStyled>
         {isOptionsOpened && (
           <SelectOptionsListStyled wideOptions={wideOptions}>

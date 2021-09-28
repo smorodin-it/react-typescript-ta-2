@@ -11,3 +11,10 @@ interface WideProp {
 interface WideOptionsProp {
   wideOptions?: boolean;
 }
+
+/**
+ * Used in select component to check if select is hovered
+ */
+interface IsHoveredProp {
+  isHovered?: boolean;
+}

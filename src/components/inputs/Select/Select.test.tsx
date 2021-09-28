@@ -11,4 +11,12 @@ describe("Select component", () => {
     const select = screen.getByText(BaseSelect.args.placeholder);
     expect(select).toBeInTheDocument();
   });
+
+  it("should be wide", () => {});
+
+  it("should open options list", () => {});
+
+  it("should render selected options label", () => {});
+
+  it("should have wide options", () => {});
 });

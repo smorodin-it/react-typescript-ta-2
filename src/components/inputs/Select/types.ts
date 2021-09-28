@@ -27,13 +27,15 @@ export interface SelectProps
     SelectPropsToRewrite,
     SelectPropsToOmitInStyledComponent,
     WideProp,
-    WideOptionsProp {
+    WideOptionsProp,
+    IsHoveredProp {
   label?: string;
   error?: string;
-  isHovered?: boolean;
   wrapperStyle?: CSSProperties;
 }
 
 export interface SelectComponentWrapperStyledProps extends WideProp {}
 
 export interface SelectOptionsListStyledProps extends WideOptionsProp {}
+
+export interface SelectArrowIconStyledProps extends IsHoveredProp {}
